@@ -17,27 +17,16 @@ An xHCI controller typically handles multiple USB devices and their events, rath
 # Usage 
 Simply follow the quick and easy steps below ↓
 
-1. Download [xHCI IMOD Disabler V1.0.zip](https://github.com/QuakedK/xHCI-IMOD-Disabler/releases/download/xHCI/xHCI-IMOD-Disabler-V1.0.zip).
+1. Download [xHCI IMOD Disabler V1.1.zip](https://github.com/QuakedK/xHCI-IMOD-Disabler/releases/download/IMOD/xHCI-IMOD-Disabler-V1.1.zip).
 2. Right-click, Extract & run the exe as admin!
 
-# Command-line Arguments
+# Command-line Argument
 
 `--Silent` | Runs xHCI IMOD Disabler sliently without display or output.
 
-`--Test` | Runs xHCI IMOD Disabler using a test IMOD Intervel value of `0xFA00` which is equal to **16 ms**.
+xHCI IMOD Disabler can be opened/ran in CMD, Task Scheduler and Run Registry with the `--Silent` Command-line Argument.
 
-`--TS-Startup` | Add's xHCI IMOD Disabler to **Task Scheduler**, so it can automatically run on startup.
-
-`--RK-Startup` | Add's xHCI IMOD Disabler to the **Run Registry Key**, so it can automatically run on startup.
-
-xHCI IMOD Disabler can be opened in cmd, and ran with such commands.
-
-1. Copy the path of **xHCI IMOD Disabler.exe** - `Eg: "C:\Users\QuakedOPS\Downloads\xHCI IMOD Disabler V1.0\xHCI IMOD Disabler.exe"`
-2. Open CMD as admin, and paste the following ↓
-
-**Format** | ```start "" "pathtoexe" --"Command-line Arguments"```
-
-**Example** | ```start "" "C:\Users\QuakedOPS\Downloads\xHCI IMOD Disabler V1.0\xHCI IMOD Disabler.exe" --Silent```
+**CMD Example** | ```start "" "C:\Users\QuakedOPS\Downloads\xHCI IMOD Disabler V1.0\xHCI IMOD Disabler.exe" --Silent```
 
 # Build Instructions
 1. Prerequisites: Visual Studio 2022/2026+ with the "Desktop development with C++" workload.
