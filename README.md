@@ -20,6 +20,13 @@ Simply follow the quick and easy steps below ↓
 1. Download [xHCI IMOD Disabler V1.1.zip](https://github.com/QuakedK/xHCI-IMOD-Disabler/releases/download/IMOD/xHCI-IMOD-Disabler-V1.1.zip).
 2. Right-click, Extract & run the exe as admin!
 
+# Startup Options
+In xHCI IMOD Disabler, you can select 2 different Startup Options which are Task Scheduler and Registry Run. Each option automatically add's xHCI IMOD Disabler to startup, and disables IMOD with the `--Silent` Command-line Argument!
+
+> [!WARNING]
+> However using the Registry Run option, may lead to BSOD's **(Blue Screens)** depending on the user. The exact cause remains fully unknown, however I speculate it has something to do with execution time on startup. You can still safely test the Registry Run and see if the issue occurs for you. If it does occur, simply disabling it from startup in Task Manager quickly enough can prevent it from being a infinite BSOD Loop. Or entering Safe Boot/Safe Mode and disabling it from there can, fix the BSOD's too.
+> Although maybe not the exact program, you can find more information here ➔ [Registry Run BSOD Information](https://github.com/QuakedK/IMOD-Disabler/blob/main/Help/IMOD%20Disabler%20Fixes.md#4-bsod-on-startup).
+
 # Command-line Argument
 
 `--Silent` | Runs xHCI IMOD Disabler sliently without display or output.
