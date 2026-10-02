@@ -28,7 +28,7 @@ In xHCI IMOD Disabler, you can select 2 different Startup Options which are Task
 > Although maybe not the exact program, you can find more information here ➔ [Registry Run BSOD Information](https://github.com/QuakedK/IMOD-Disabler/blob/main/Help/IMOD%20Disabler%20Fixes.md#4-bsod-on-startup).
 
 # Windows Version Support
-Due to the April 2026 Windows Driver Policy update, Microsoft stopped trusting legacy cross-signed drivers by default, causing Windows to block drivers that don't meet its current signing requirements. Effectively blocking the usage of inpoutx64 and WinRing0x64 drivers, which prevents xHCI IMOD Disabler from working.
+Due to the [April 2026 Windows Driver Policy update](https://support.microsoft.com/en-us/windows/hardware/drivers/the-windows-driver-policy), Microsoft stopped trusting legacy cross-signed drivers by default, causing Windows to block drivers that don't meet its current signing requirements. Effectively blocking the usage of inpoutx64 and WinRing0x64 drivers, which prevents xHCI IMOD Disabler from working.
 
 **Affected Windows Versions** - (Assuming the April 2026 was installed or was released/made after)
 - Windows 11 24H2
