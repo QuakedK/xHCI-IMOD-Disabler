@@ -27,6 +27,28 @@ In xHCI IMOD Disabler, you can select 2 different Startup Options which are Task
 > However using the Registry Run option, may lead to BSOD's **(Blue Screens)** depending on the user. The exact cause remains fully unknown, however I speculate it has something to do with execution time on startup. You can still safely test the Registry Run and see if the issue occurs for you. If it does occur, simply disabling it from startup in Task Manager quickly enough can prevent it from being a infinite BSOD Loop. Or entering Safe Boot/Safe Mode and disabling it from there can, fix the BSOD's too.
 > Although maybe not the exact program, you can find more information here ➔ [Registry Run BSOD Information](https://github.com/QuakedK/IMOD-Disabler/blob/main/Help/IMOD%20Disabler%20Fixes.md#4-bsod-on-startup).
 
+# Windows Version Support
+Due to the April 2026 Windows Driver Policy update, Microsoft stopped trusting legacy cross-signed drivers by default, causing Windows to block drivers that don't meet its current signing requirements. Effectively blocking the usage of inpoutx64 and WinRing0x64 drivers, which prevents xHCI IMOD Disabler from working.
+
+**Affected Windows Versions** - (Assuming the April 2026 was installed or was released/made after)
+- Windows 11 24H2
+- Windows 11 25H2
+- Windows 11 26H1
+- Windows 11 26H2
+- Windows Server 2025
+
+**Work Around:**
+
+Simply installing a Windows 11 build, before the April 2026 Windows Driver Policy update would stop Windows from blocking the required drivers for xHCI IMOD Disabler. 
+Eg: Using [RG-Adguard](https://files.rg-adguard.net/version/f0bd8307-d897-ef77-dbd6-216fefbe94c5), you could download specific Windows versions down to the Build and Revision numbers. Making it easy to download Windows 11 24H2, 25H2 and 26H1 before the April 2026 update.
+
+**Tutorial:**
+
+When purposefully installing an older Windows version, you need to prevent/block Windows from updating. Otherwise your older Windows version gets updated to a newer Windows version, via a cumulative update. However nowadays even when setting up a Windows installation, it will attempt to update to the latest revision/cumulative update. So in order to prevent this, Windows must be installed offline! This can be done using the [Offline Account Method](https://youtu.be/VOtOEEGxbu4?si=Q9WdHbVFJQExuPk8) during Windows installation, however it doesn't stop there. As once you get into windows and either replug in your ethernet or connect your Wi-Fi Windows will try updating automatically, including such revision/cumulative updates. So in order to prevent this, before we ever connect to the internet after completing our Windows install we must pause Windows updates.
+However most times it ends up unpausing itself, so running [Pause Windows Updates](https://github.com/QuakedK/Downloads/blob/main/Pause%20updates%20until%20the%20year%203000.reg) and restarting then connecting to internet finally should prevent Windows from updating!
+
+More Information ➔ [Offline Windows Install](https://github.com/QuakedK/Scripting-Station/blob/main/System%20Docs/Offline%20Windows%20Install.md#offline-windows-install).
+
 # Command-line Argument
 
 `--Silent` | Runs xHCI IMOD Disabler sliently without display or output.
