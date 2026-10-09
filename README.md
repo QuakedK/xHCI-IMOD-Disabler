@@ -1,5 +1,5 @@
 # xHCI IMOD Disabler
-xHCI IMOD Disabler: Disables xHCI Interrupt Moderation **(IMOD)** on every USB Host Controller found in your system, by patching/modifying each interrupter's IMOD register to **0** via PCI/MMIO access using **WinRing0** and **InpOutX64** drivers. The default IMOD Intervel is `0xFA0` / `4000 decimal` which translates to **250 ns**, but by disabling IMOD the **250 ns** becomes **0 ns/0 ms**.
+xHCI IMOD Disabler: Disables xHCI Interrupt Moderation **(IMOD)** on every USB Host Controller found in your system, by patching/modifying each interrupter's IMOD register to **0** via PCI/MMIO access using **WinRing0** and **InpOutX64** drivers. The default IMOD Intervel is `0xFA0` / `4000 decimal` which translates to `1,000,000 ns` / `1 ms`, but by disabling IMOD the **1 ms** becomes **0 ns/0 ms**.
 
 <img width="1280" height="720" alt="Github Picture" src="https://github.com/user-attachments/assets/67455a2c-197f-4b30-b1a2-0a53d722ed8f" />
 
