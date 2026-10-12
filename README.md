@@ -1,12 +1,15 @@
 # xHCI IMOD Disabler
-xHCI IMOD Disabler: Disables xHCI Interrupt Moderation **(IMOD)** on every USB Host Controller found in your system, by patching/modifying each interrupter's IMOD register to **0** via PCI/MMIO access using **WinRing0** and **InpOutX64** drivers. The default IMOD Intervel is `0xFA0` / `4000 decimal` which translates to `1,000,000 ns` / `1 ms`, but by disabling IMOD the **1 ms** becomes **0 ns/0 ms**.
+**xHCI IMOD Disabler**: Is a menued tool that allows the user to backup current IMOD Values, restore backed up IMOD Values, tests IMOD by setting it to `0xFA00` **(16 ms / 62.5 Hz)**, Disable (IMOD) on every selected USB Host Controller, Add **xHCI IMOD Disabler** to startup, etc.
+
+**Disable Option**: Disables xHCI Interrupt Moderation **(IMOD)** on every selected USB Host Controller detected on your system by modifying each interrupter's IMOD register to **`0`** via PCI/MMIO access using the **WinRing0** and **InpOutX64** drivers. The default xHCI controller specification IMOD interval is `0xFA0` **(4000 decimal / 1,000 µs)**, while Windows commonly uses `0xC8` **(200 decimal / 50 µs)**. Disabling IMOD sets the interval to **`0 µs`**, effectively eliminating the intentional interrupt moderation delay.
 
 <img width="1280" height="720" alt="Github Picture" src="https://github.com/user-attachments/assets/67455a2c-197f-4b30-b1a2-0a53d722ed8f" />
 
 ![GitHub Release Downloads](https://img.shields.io/github/downloads/QuakedK/xHCI-IMOD-Disabler/total)
 
 # Why disable IMOD?
-**Interrupt Moderation **(IMOD)** controls the amount of time the **USB xHCI controller** waits before generating an **interrupt** for USB events.** A higher **IMOD** value means the controller waits **longer** before generating the interrupt, while a lower value means it waits for **less** time.  The default IMOD Intervel is specified in `250 ns` increments.
+**Interrupt Moderation **(IMOD)** controls the amount of time the **USB xHCI controller** waits before generating an **interrupt** for USB events.** A higher **IMOD** value means the controller waits **longer** before generating the interrupt, while a lower value means it waits for **less** time. The IMOD interval is specified in `250 ns` increments, meaning the IMOD register value is multiplied by 250 ns to calculate the interval. EG: `IMOD Interval = IMOD Value x 250 ns`.
+
 
 Disabling IMOD by setting it to `0x0` removes this waiting period. This is particularly relevant for high polling rate devices such as 8K Hz mice, which generate a new report every `125 µs` **(125,000 ns)**. Since the IMOD interval can introduce an additional **waiting period** before USB events are reported to the CPU, removing that delay allows high-frequency input events to be processed more **immediately**, reducing potential latency and avoiding unnecessary delay between individual mouse reports and their processing.
 
