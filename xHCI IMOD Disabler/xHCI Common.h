@@ -5,7 +5,7 @@
 
 namespace xHCI
 {
-    constexpr const char* VERSION = "V1.1";
+    constexpr const char* VERSION = "V1.2";
 
     // IMOD interval values, in 250 ns units.
     constexpr uint32_t DESIRED_IMOD_INTERVAL = 0x0000;      // Moderation off.
