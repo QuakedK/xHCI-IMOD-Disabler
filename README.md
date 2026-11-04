@@ -20,7 +20,7 @@ An xHCI controller typically handles multiple USB devices and their events, rath
 # Usage 
 Simply follow the quick and easy steps below ↓
 
-1. Download [xHCI IMOD Disabler V1.1.zip](https://github.com/QuakedK/xHCI-IMOD-Disabler/releases/download/IMOD/xHCI-IMOD-Disabler-V1.1.zip).
+1. Download [xHCI IMOD Disabler V1.2.zip](https://github.com/QuakedK/xHCI-IMOD-Disabler/releases/download/IMOD-Disabler/xHCI-IMOD-Disabler-V1.2.zip).
 2. Right-click, Extract & run the exe as admin!
 
 # Startup Options
